@@ -10,13 +10,18 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+% Custom command for numbered circles
+\newcommand{\circnum}[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 % Page setup
 \geometry{
-    top=4cm,
-    bottom=2cm,
-    left=2.5cm,
-    right=2.5cm
+    top=1cm,
+    bottom=1.5cm,
+    left=1.5cm,
+    right=1.5cm
 }
 
 % Header and footer setup
@@ -27,11 +32,11 @@
 \fancyhead[C]{%
     \renewcommand{\arraystretch}{1.0}
     \fbox{%
-        \begin{tabular}{@{}p{2.5cm}|p{12.85cm}@{}}
+        \begin{tabular}{@{}p{2.5cm}|p{15cm}@{}}
             \multirow{7}{*}{\centering\includegraphics[width=2.5cm,height=2.5cm,keepaspectratio]{itera.png}} & 
             \multicolumn{1}{c}{\large\textbf{UJIAN TENGAH SEMESTER (UTS)}} \\
             & {\small\renewcommand{\arraystretch}{0.8}
-            \begin{tabular}{@{}p{4cm}@{\ :\ }p{7.5cm}@{}}
+            \begin{tabular}{@{}p{4cm}@{\ :\ }p{9cm}@{}}
                 Program Studi & Teknik Mesin \\
                 Kode-Mata Kuliah & MS2113 -- Kinematika Teknik \\
                 Dosen Penguji & Dosen pengampu \\
@@ -50,26 +55,28 @@
 % Adjust header height and positioning
 \setlength{\headheight}{232.05008pt}
 \addtolength{\topmargin}{-61.33356pt}
-\setlength{\headsep}{1cm}
+\setlength{\headsep}{0.5cm}
 
 \begin{document}
 
 % CPMK Table (aligned with content border)
 \noindent
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|p{2cm}|p{10.5cm}|p{2cm}|}
+{\small % small text size
+\begin{tabular}{|p{2.8cm}|p{13cm}|c|}
 \hline
-CPMK 1 & Tuliskan CPMK Masing masing Mata Kuliah & 50 \\
+\textbf{CPMK 1} & \textit{Tuliskan CPMK Masing masing Mata Kuliah} & 50 \\
 \hline
-CPMK 2 & Tuliskan CPMK Masing masing Mata Kuliah & 25 \\
+\textbf{CPMK 2} & \textit{Tuliskan CPMK Masing masing Mata Kuliah} & 25 \\
 \hline
-CPMK 3 & Tuliskan CPMK Masing masing Mata Kuliah & 15 \\
+\textbf{CPMK 3} & \textit{Tuliskan CPMK Masing masing Mata Kuliah} & 15 \\
 \hline
-CPMK 4 & Tuliskan CPMK Masing masing Mata Kuliah & 10 \\
+\textbf{CPMK 4} & \textit{Tuliskan CPMK Masing masing Mata Kuliah} & 10 \\
 \hline
  & \textbf{Total} & \textbf{100} \\
 \hline
 \end{tabular}
+}
 
 \vspace{0.5cm}
 
@@ -79,13 +86,25 @@ CPMK 4 & Tuliskan CPMK Masing masing Mata Kuliah & 10 \\
 \vspace{0.5cm}
 
 % Sample content to demonstrate the template
-\section*{Soal 1}
+\subsection*{Soal 1 \fbox{CPMK 1} \circnum{20}}{\small
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+}
+\vspace{0.5cm}
 
-\vspace{2cm}
-
-\section*{Soal 2}
+\subsection*{Soal 2 \fbox{CPMK 2} \fbox{CPMK3} \circnum{25}}{\small
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+}
+{\small
+\begin{enumerate}[label=\Alph*., itemsep=0.2em, parsep=0pt, topsep=0.5em]
+    \item lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    \item sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    \item ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\end{enumerate}
+
+\begin{flushright}
+\textit{lanjut ke halaman berikutnya...}
+\end{flushright}
+}
 
 \vspace{0.5cm}
 \end{minipage}%
@@ -98,19 +117,21 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule}
 \vspace{0.5cm}
 
-\section*{Soal 3}
+\subsection*{Soal 3 \fbox{CPMK 1} \circnum{15}}{\small
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+}
 
-\vspace{2cm}
+\vspace{0.5cm}
 
-\section*{Soal 4}
+\subsection*{Soal 4 \fbox{CPMK 1} \fbox{CPMK4} \circnum{30}}{\small
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+}
 
 \vspace{0.5cm}
 \end{minipage}%
 }
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 % OTORISASI heading
 \begin{center}
@@ -122,7 +143,7 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
 % Signature table (outside content border)
 \noindent
 \renewcommand{\arraystretch}{1.0}
-\begin{tabular}{|>{\centering}p{4.8cm}|>{\centering}p{4.8cm}|>{\centering\arraybackslash}p{4.8cm}|}
+\begin{tabular}{|>{\centering}p{5.5cm}|>{\centering}p{5.5cm}|>{\centering\arraybackslash}p{5.5cm}|}
 \hline
 Disahkan & Diperiksa & Dibuat \\
 tanggal: ……………… & tanggal: ……………… & tanggal: ……………… \\
