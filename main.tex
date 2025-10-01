@@ -12,6 +12,7 @@
 \usepackage{multirow}
 \usepackage{enumitem}
 \usepackage{tikz}
+\usepackage{lastpage}
 
 % Custom command for numbered circles
 \newcommand{\circnum}[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
@@ -43,7 +44,7 @@
                 Hari/ Tanggal & Rabu, 26 Juni 2021 \\
                 Waktu & xxx menit \\
                 Sifat & Open/Close/Open Sheet/Open Paper \\
-                Halaman & \thepage\ dari 2 halaman \\
+                Halaman & \thepage\ dari \pageref{LastPage} halaman \\
             \end{tabular}} \\
         \end{tabular}%
     }
